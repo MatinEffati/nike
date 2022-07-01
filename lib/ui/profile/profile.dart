@@ -4,6 +4,7 @@ import 'package:nike_store/data/auth_info.dart';
 import 'package:nike_store/data/repo/auth_repository.dart';
 import 'package:nike_store/data/repo/cart_repository.dart';
 import 'package:nike_store/ui/auth/auth.dart';
+import 'package:nike_store/ui/favorites/favorites.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -44,7 +45,13 @@ class ProfileScreen extends StatelessWidget {
                   RowItem(
                     rowName: const Text('لیست علاقه مندی ها'),
                     icon: const Icon(CupertinoIcons.heart),
-                    callBack: () {},
+                    callBack: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const FavoritesListScreen(),
+                        ),
+                      );
+                    },
                   ),
                   const Divider(
                     height: 1,
