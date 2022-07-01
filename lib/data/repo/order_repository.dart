@@ -18,4 +18,7 @@ class OrderRepository extends IOrderRepository {
 
   @override
   Future<PaymentReceipt> getPaymentReceipt(int orderId) => _dataSource.getPaymentReceipt(orderId);
+
+  @override
+  Future<List<OrderEntity>> getOrders() => _dataSource.getOrders();
 }

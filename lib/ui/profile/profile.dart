@@ -5,6 +5,7 @@ import 'package:nike_store/data/repo/auth_repository.dart';
 import 'package:nike_store/data/repo/cart_repository.dart';
 import 'package:nike_store/ui/auth/auth.dart';
 import 'package:nike_store/ui/favorites/favorites.dart';
+import 'package:nike_store/ui/order/order_history.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -59,7 +60,13 @@ class ProfileScreen extends StatelessWidget {
                   RowItem(
                     rowName: const Text('سوابق سفارش'),
                     icon: const Icon(CupertinoIcons.cart),
-                    callBack: () {},
+                    callBack: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const OrderHistoryScreen(),
+                        ),
+                      );
+                    },
                   ),
                   const Divider(
                     height: 1,
